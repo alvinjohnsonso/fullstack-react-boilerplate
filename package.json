@@ -7,7 +7,7 @@
     "start": "node src/server/index.js",
     "build": "webpack --config webpack.prod.js",
     "dev": "concurrently --kill-others \"npm run server-dev\" \"npm run client-dev\"",
-    "server-dev": "nodemon src/server/index.js",
+    "server-dev": "nodemon -L src/server/index.js",
     "client-dev": "webpack --config webpack.dev.js"
   },
   "keywords": [

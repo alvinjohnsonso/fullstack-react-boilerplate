@@ -4,12 +4,11 @@
   "description": "A store for destashing my owned items.",
   "main": "src/server/index.js",
   "scripts": {
-    "start": "npm run client && npm run server",
+    "start": "node src/server/index.js",
+    "build": "webpack --config webpack.prod.js",
     "dev": "concurrently --kill-others \"npm run server-dev\" \"npm run client-dev\"",
     "server-dev": "nodemon src/server/index.js",
-    "client-dev": "webpack --config webpack.dev.js",
-    "server": "node src/server/index.js",
-    "client": "webpack --config webpack.prod.js"
+    "client-dev": "webpack --config webpack.dev.js"
   },
   "keywords": [
     "destashing",

@@ -1,8 +1,8 @@
 {
-  "name": "destash_store",
+  "name": "fullstack-react-boilerplate",
   "version": "1.0.0",
-  "description": "A store for destashing my owned items.",
-  "main": "src/server/index.js",
+  "description": "Personal fullstack react boilerplate",
+  "main": "server/index.js",
   "scripts": {
     "postinstall": "(cd server && npm install); (cd client && npm install)",
     "start": "cd server && npm start",

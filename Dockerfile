@@ -3,7 +3,7 @@ WORKDIR /app
 COPY package.json .
 
 # install all packages first
-RUN npm install
+RUN npm install && npm run postinstall
 
 COPY . .
 

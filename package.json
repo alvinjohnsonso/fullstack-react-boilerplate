@@ -4,11 +4,11 @@
   "description": "A store for destashing my owned items.",
   "main": "src/server/index.js",
   "scripts": {
-    "start": "node src/server/index.js",
-    "build": "webpack --config webpack.prod.js",
-    "dev": "concurrently --kill-others \"npm run server-dev\" \"npm run client-dev\"",
-    "server-dev": "nodemon -L src/server/index.js",
-    "client-dev": "webpack --config webpack.dev.js"
+    "postinstall": "(cd server && npm install); (cd client && npm install)",
+    "start": "cd server && npm start",
+    "build": "cd client && npm run compile",
+    "dev": "concurrently --kill-others \"cd server && npm run dev\" \"cd client && npm run dev\"",
+    "test-dev": "cd server && npm test"
   },
   "keywords": [
     "destashing",
@@ -21,31 +21,6 @@
   "author": "Alvin Johnson So",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "^7.10.3",
-    "@babel/preset-env": "^7.10.3",
-    "@babel/preset-react": "^7.10.1",
-    "babel-loader": "^8.1.0",
-    "clean-webpack-plugin": "^3.0.0",
-    "concurrently": "^5.2.0",
-    "css-loader": "^3.6.0",
-    "html-loader": "^1.1.0",
-    "html-webpack-plugin": "^4.3.0",
-    "jest": "^26.1.0",
-    "mini-css-extract-plugin": "^0.9.0",
-    "node-sass": "^4.14.1",
-    "nodemon": "^2.0.4",
-    "sass-loader": "^8.0.2",
-    "style-loader": "^1.2.1",
-    "supertest": "^4.0.2",
-    "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.11.0",
-    "webpack-merge": "^4.2.2"
-  },
-  "dependencies": {
-    "express": "^4.17.1",
-    "morgan": "^1.10.0",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "concurrently": "^5.2.0"
   }
 }

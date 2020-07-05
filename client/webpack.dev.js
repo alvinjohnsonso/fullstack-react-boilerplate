@@ -3,11 +3,11 @@ const common = require("./webpack.common")
 const merge = require("webpack-merge")
 
 module.exports = merge(common, {
-  entry: path.resolve(__dirname, "src", "client", "index.jsx"),
+  entry: path.resolve(__dirname, "src", "index.jsx"),
   mode: "development",
   output: {
     filename: "[name].bundle.js",
-    path: path.resolve(__dirname, "dist")
+    path: path.resolve(__dirname, "..", "dist")
   },
   module: {
     rules: [

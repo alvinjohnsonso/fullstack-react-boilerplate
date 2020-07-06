@@ -15,6 +15,9 @@ RUN npm run postinstall
 
 COPY . .
 
+# get NODE_ENV from docker-compose
+ARG NODE_ENV
+ENV NODE_ENV $NODE_ENV
 RUN if [ "${NODE_ENV}" != "development" ]; then npm run build; fi
 
 CMD if [ "${NODE_ENV}" != "development" ]; then npm start; else npm run dev; fi

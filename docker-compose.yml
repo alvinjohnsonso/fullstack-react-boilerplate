@@ -11,4 +11,6 @@ services:
     ports:
       - 3000:3000
     volumes:
-      - ./src:/app/src
+      - ./server/index.js:/app/server/index.js
+      - ./server/src:/app/server/src
+      - ./client/src:/app/client/src

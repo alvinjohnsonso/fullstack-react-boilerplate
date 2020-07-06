@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon -L src/server/index.js",
     "start": "node src/server/index.js",
-    "test": "jest"
+    "test": "jest --maxWorkers=4"
   },
   "keywords": [],
   "devDependencies": {
@@ -17,5 +17,8 @@
   "dependencies": {
     "express": "^4.17.1",
     "morgan": "^1.10.0"
+  },
+  "jest": {
+    "testEnvironment": "node"
   }
 }
